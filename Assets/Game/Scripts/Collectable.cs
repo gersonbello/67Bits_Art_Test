@@ -40,7 +40,7 @@ public class Collectable : MonoBehaviour
         _onCollect.Invoke();
         player.Anim.SetTrigger("Collect");
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(10);
         _onSpawn.Invoke();
         transform.position = startPoint;
     }

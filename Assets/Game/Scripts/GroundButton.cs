@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,14 +12,34 @@ public class GroundButton : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private Image buttonFill;
+
+    [Header("Animation name")]
+    [SerializeField] string animTriggerName;
+    Animator playerAnimator;
+    
+    [SerializeField] Build build;
+
     private void Awake()
     {
         Cancell();
     }
+
     public void Cancell()
     {
         buttonFill.fillAmount = 0;
         StopAllCoroutines();
+    }
+
+    public void PlayAnimation(Animator animator)
+    {
+        playerAnimator = animator;
+        animator.SetBool(animTriggerName, true);
+    }
+
+    public void StopAnimation()
+    {
+        if(playerAnimator != null) { playerAnimator = FindObjectOfType<Player>().GetAnimator(); }
+        playerAnimator.SetBool(animTriggerName, false);
     }
 
     public IEnumerator Fill(Transform player)
@@ -30,10 +51,24 @@ public class GroundButton : MonoBehaviour
             buttonFill.fillAmount += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
-        player.transform.forward = transform.forward;
-        buttonFill.fillAmount = 0;
-        StartCoroutine(PlayEvents());
+
+        if (build != null)
+        {
+            if (build.GetMaterial())
+            {
+                player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+                player.transform.forward = transform.forward;
+                buttonFill.fillAmount = 0;
+                StartCoroutine(PlayEvents());
+            }
+        }
+        else
+        {
+            player.transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
+            player.transform.forward = transform.forward;
+            buttonFill.fillAmount = 0;
+            StartCoroutine(PlayEvents());
+        }
     }
 
     public IEnumerator PlayEvents()
