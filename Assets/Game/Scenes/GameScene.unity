@@ -1406,7 +1406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 98, y: -85.999756}
+  m_AnchoredPosition: {x: 98, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!4 &223259790 stripped
@@ -4668,7 +4668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -322.9, y: -75}
+  m_AnchoredPosition: {x: -322.9, y: -119.000244}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947239452
@@ -6849,7 +6849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -198, y: -202.79}
+  m_AnchoredPosition: {x: -198, y: -246.79022}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1424545776
@@ -8383,7 +8383,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: df60bd8c52b43a44d96a10457882882c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12878,7 +12878,7 @@ PrefabInstance:
     - target: {fileID: 3987822987964701869, guid: 2efc0b8b22a958849a214935380ff61d,
         type: 3}
       propertyPath: speed
-      value: 500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3987822987964701869, guid: 2efc0b8b22a958849a214935380ff61d,
         type: 3}
