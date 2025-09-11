@@ -32,7 +32,12 @@ gameObject.SetActive(Application.isMobilePlatform);
     {
         if (Input.touchCount > 0)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began) startPoint = Input.GetTouch(0).position;
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                joystickHandle.gameObject.SetActive(true);
+                joystickBKG.gameObject.SetActive(true);
+                startPoint = Input.GetTouch(0).position;
+            }
             if (RectTransformUtility.RectangleContainsScreenPoint(joystickArea, startPoint) && !IsPointerOverUIObject(startPoint))
             {
 
@@ -51,6 +56,8 @@ gameObject.SetActive(Application.isMobilePlatform);
                 currentDistance = 0;
                 joystickBKG.localPosition = Vector2.zero;
                 joystickHandle.localPosition = Vector2.zero;
+                joystickHandle.gameObject.SetActive(false);
+                joystickBKG.gameObject.SetActive(false);
             }
         }
     }

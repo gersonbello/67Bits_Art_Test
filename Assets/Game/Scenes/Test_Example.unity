@@ -450,6 +450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileJoystick
       objectReference: {fileID: 0}
+    - target: {fileID: 5479940250790174390, guid: a68b14c19af2f23439cd7fff7c9b4a2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479940250790174391, guid: a68b14c19af2f23439cd7fff7c9b4a2c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1022,6 +1027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectable
       objectReference: {fileID: 0}
+    - target: {fileID: 5761165245780871939, guid: bffbf0412c54c1d49b482b3745e58a27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302734834953693319, guid: bffbf0412c54c1d49b482b3745e58a27,
         type: 3}
       propertyPath: animName
@@ -1331,6 +1341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buildable
       objectReference: {fileID: 0}
+    - target: {fileID: 5761165245780871939, guid: 8ed3af76aebb86242b18c67300cf076d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7302734834953693319, guid: 8ed3af76aebb86242b18c67300cf076d,
         type: 3}
       propertyPath: animName
@@ -1604,6 +1619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 882845632387719140, guid: 2efc0b8b22a958849a214935380ff61d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1340995162102651195, guid: 2efc0b8b22a958849a214935380ff61d,
         type: 3}

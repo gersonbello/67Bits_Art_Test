@@ -19,12 +19,17 @@ public class UIManager : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Sprite[] musicImages;
+    [SerializeField] Sprite[] sfxImages;
 
     [Header("Win Canvas")]
     [SerializeField] Transform winCanvas;
 
     [Header("Beckground Canvas")]
     [SerializeField] Transform beckgroundImage;
+
+    bool musicValue = true;
+    bool sfxValue = true;
 
     public void SetPlayerUI(int xpMax)
     {
@@ -44,7 +49,7 @@ public class UIManager : MonoBehaviour
         xpSlider.value = xp;
         xpAmountText.text = "XP: " + xp.ToString();
         if (xpSlider.value >= xpSlider.maxValue)
-            Win();
+            StartCoroutine(Win());
     }
 
     public void OpenSettings()
@@ -69,8 +74,10 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void Win()
+    private IEnumerator Win()
     {
+        yield return new WaitForSeconds(3);
+
         settingsButton.gameObject.SetActive(false);
         woodAmountText.gameObject.SetActive(false);
         xpSlider.gameObject.SetActive(false);
@@ -89,5 +96,37 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void MusicVolume(Image image)
+    {
+        if (musicValue)
+        {
+            audioMixer.SetFloat("musicVolume", -80);
+            image.sprite = musicImages[1];
+        }
+        else
+        {
+            audioMixer.SetFloat("musicVolume", 0);
+            image.sprite = musicImages[0];
+        }
+
+        musicValue = !musicValue;
+    }
+
+    public void SFXVolume(Image image)
+    {
+        if (sfxValue)
+        {
+            audioMixer.SetFloat("sfxVolume", -80);
+            image.sprite = sfxImages[1];
+        }
+        else
+        {
+            audioMixer.SetFloat("sfxVolume", 0);
+            image.sprite = sfxImages[0];
+        }
+
+        sfxValue = !sfxValue;
     }
 }
